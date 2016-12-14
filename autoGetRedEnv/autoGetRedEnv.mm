@@ -63,11 +63,11 @@ CHDeclareClass(CMessageMgr);
 
 CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
 {
-    CHSuper(2, CMessageMgr, AsyncOnAddMsg, arg1, MsgWrap, arg2);
     Ivar uiMessageTypeIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_uiMessageType");
     ptrdiff_t offset = ivar_getOffset(uiMessageTypeIvar);
     unsigned char *stuffBytes = (unsigned char *)(__bridge void *)arg2;
-    NSUInteger m_uiMessageType = * ((NSUInteger *)(stuffBytes + offset));
+    NSUInteger* messageTypePoint = (NSUInteger *)(stuffBytes + offset);
+    NSUInteger m_uiMessageType = * messageTypePoint;
     
     Ivar nsFromUsrIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_nsFromUsr");
     id m_nsFromUsr = object_getIvar(arg2, nsFromUsrIvar);
@@ -75,8 +75,12 @@ CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
     Ivar nsContentIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_nsContent");
     id m_nsContent = object_getIvar(arg2, nsContentIvar);
     
-    NSLog(@">>>>>> AsyncOnAddMsg  MsgWrap <<<<<< \n arg1:%@ arg2:%@ \n messageType:%zd  fromUser:%@ content:%@ ", arg1, arg2, m_uiMessageType, m_nsFromUsr, m_nsContent);
-    /*
+
+    NSLog(@"\n>>>>>> AsyncOnAddMsg  MsgWrap <<<<<< \n arg1:[%@]%@ arg2:[%@]%@ \n messageType:%zd  fromUser:%@ content:%@ ", [arg1 class], arg1, [arg2 class], arg2, m_uiMessageType, m_nsFromUsr, m_nsContent);
+
+    
+    
+    
     switch(m_uiMessageType) {
         case 1:
         {
@@ -225,10 +229,11 @@ CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
             
             break;
         }
+            
         default:
             break;
     }
-     */
+    
 }
 
 __attribute__((constructor)) static void entry()
