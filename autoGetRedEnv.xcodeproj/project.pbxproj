@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8633D88A1DF6C28200583A1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8633D8891DF6C28200583A1F /* Foundation.framework */; };
+		8633D8941DF6C28200583A1F /* autoGetRedEnv.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8633D8861DF6C28200583A1F /* autoGetRedEnv.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = autoGetRedEnv.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8633D8891DF6C28200583A1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8633D88E1DF6C28200583A1F /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		8633D88F1DF6C28200583A1F /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		8633D8911DF6C28200583A1F /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		8633D8921DF6C28200583A1F /* autoGetRedEnv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "autoGetRedEnv-Prefix.pch"; sourceTree = "<group>"; };
+		8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = autoGetRedEnv.mm; sourceTree = "<group>"; };
+		8633D8981DF6C28200583A1F /* autoGetRedEnv.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = autoGetRedEnv.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/autoGetRedEnv.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8633D8821DF6C28200583A1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8633D88A1DF6C28200583A1F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8633D87C1DF6C28200583A1F = {
+			isa = PBXGroup;
+			children = (
+				8633D88B1DF6C28200583A1F /* autoGetRedEnv */,
+				8633D8881DF6C28200583A1F /* Frameworks */,
+				8633D8871DF6C28200583A1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8633D8871DF6C28200583A1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8861DF6C28200583A1F /* autoGetRedEnv.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8633D8881DF6C28200583A1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8891DF6C28200583A1F /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8633D88B1DF6C28200583A1F /* autoGetRedEnv */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */,
+				8633D88C1DF6C28200583A1F /* Package */,
+				8633D8901DF6C28200583A1F /* Supporting Files */,
+			);
+			path = autoGetRedEnv;
+			sourceTree = "<group>";
+		};
+		8633D88C1DF6C28200583A1F /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				8633D88D1DF6C28200583A1F /* DEBIAN */,
+				8633D8951DF6C28200583A1F /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		8633D88D1DF6C28200583A1F /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				8633D88E1DF6C28200583A1F /* control.txt */,
+				8633D88F1DF6C28200583A1F /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		8633D8901DF6C28200583A1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8911DF6C28200583A1F /* PackageVersion.plist */,
+				8633D8921DF6C28200583A1F /* autoGetRedEnv-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8633D8951DF6C28200583A1F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8961DF6C28200583A1F /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		8633D8961DF6C28200583A1F /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8971DF6C28200583A1F /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		8633D8971DF6C28200583A1F /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				8633D8981DF6C28200583A1F /* autoGetRedEnv.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8633D8831DF6C28200583A1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8633D8851DF6C28200583A1F /* autoGetRedEnv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8633D89B1DF6C28200583A1F /* Build configuration list for PBXNativeTarget "autoGetRedEnv" */;
+			buildPhases = (
+				8633D8811DF6C28200583A1F /* Sources */,
+				8633D8821DF6C28200583A1F /* Frameworks */,
+				8633D8831DF6C28200583A1F /* Headers */,
+				8633D8841DF6C28200583A1F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = autoGetRedEnv;
+			productName = autoGetRedEnv;
+			productReference = 8633D8861DF6C28200583A1F /* autoGetRedEnv.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8633D87D1DF6C28200583A1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				TargetAttributes = {
+					8633D8851DF6C28200583A1F = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FUC4HXX44A;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8633D8801DF6C28200583A1F /* Build configuration list for PBXProject "autoGetRedEnv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8633D87C1DF6C28200583A1F;
+			productRefGroup = 8633D8871DF6C28200583A1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8633D8851DF6C28200583A1F /* autoGetRedEnv */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8633D8841DF6C28200583A1F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8633D8811DF6C28200583A1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8633D8941DF6C28200583A1F /* autoGetRedEnv.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8633D8991DF6C28200583A1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		8633D89A1DF6C28200583A1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		8633D89C1DF6C28200583A1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = FUC4HXX44A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "autoGetRedEnv/autoGetRedEnv-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		8633D89D1DF6C28200583A1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = FUC4HXX44A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "autoGetRedEnv/autoGetRedEnv-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8633D8801DF6C28200583A1F /* Build configuration list for PBXProject "autoGetRedEnv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8633D8991DF6C28200583A1F /* Debug */,
+				8633D89A1DF6C28200583A1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8633D89B1DF6C28200583A1F /* Build configuration list for PBXNativeTarget "autoGetRedEnv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8633D89C1DF6C28200583A1F /* Debug */,
+				8633D89D1DF6C28200583A1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8633D87D1DF6C28200583A1F /* Project object */;
+}
