@@ -60,9 +60,19 @@ static NSString* const HBTypeSetting = @"HBPliginType";
 CHDeclareClass(CMessageMgr);
 
 // - (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2;
+// - (void)AsyncOnDelMsg:(id)arg1 MsgWrap:(id)arg2
+// - (void)onRevokeMsg:(id)arg1;
+
+CHMethod(1, void, CMessageMgr, onRevokeMsg, id, arg1)
+{
+
+    NSLog(@"\n>>>>>> onRevokeMsg <<<<<< \n arg1:[%@]%@ ", [arg1 class], arg1);
+}
 
 CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
 {
+    CHSuper(2,  CMessageMgr, AsyncOnAddMsg, arg1, MsgWrap, arg2);
+    
     Ivar uiMessageTypeIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_uiMessageType");
     ptrdiff_t offset = ivar_getOffset(uiMessageTypeIvar);
     unsigned char *stuffBytes = (unsigned char *)(__bridge void *)arg2;
@@ -240,4 +250,6 @@ __attribute__((constructor)) static void entry()
 {
     CHLoadLateClass(CMessageMgr);
     CHClassHook(2, CMessageMgr, AsyncOnAddMsg, MsgWrap);
+//    CHClassHook(2, CMessageMgr, AsyncOnDelMsg, MsgWrap);
+    CHClassHook(1, CMessageMgr, onRevokeMsg);
 }
