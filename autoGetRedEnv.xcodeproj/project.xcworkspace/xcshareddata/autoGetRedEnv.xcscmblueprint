@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7DA9E9463B3287801F26C0AA932D3B601104B356",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7DA9E9463B3287801F26C0AA932D3B601104B356" : 9223372036854775807,
+    "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4037146C-A740-42D6-BF1F-6762EF890334",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7DA9E9463B3287801F26C0AA932D3B601104B356" : "CFAutoGetRedEnv\/",
+    "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "autoGetRedEnv",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "autoGetRedEnv.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yuchuanfeng\/CFWeChatAutoGetRedEnv.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7DA9E9463B3287801F26C0AA932D3B601104B356"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yuchuanfeng\/CFHoveringTableViewDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85"
+    }
+  ]
+}

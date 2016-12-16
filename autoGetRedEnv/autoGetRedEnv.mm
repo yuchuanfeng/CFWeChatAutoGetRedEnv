@@ -58,17 +58,40 @@ static NSString* const HBTypeSetting = @"HBPliginType";
 //}
 
 CHDeclareClass(CMessageMgr);
+CHDeclareClass(JailBreakHelper);
 
 // - (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 // - (void)AsyncOnDelMsg:(id)arg1 MsgWrap:(id)arg2
 // - (void)onRevokeMsg:(id)arg1;
+/*
+ - (BOOL)HasInstallJailbreakPluginInvalidIAPPurchase;
+ - (BOOL)HasInstallJailbreakPlugin:(id)arg1;
+ - (BOOL)IsJailBreak;
+ */
+#pragma mark - 越狱检测
+CHMethod(0, BOOL, JailBreakHelper, HasInstallJailbreakPluginInvalidIAPPurchase)
+{
+    return NO;
+}
 
+CHMethod(0, BOOL, JailBreakHelper, IsJailBreak)
+{
+    return NO;
+}
+CHMethod(1, BOOL, JailBreakHelper, HasInstallJailbreakPlugin, id, arg1)
+{
+    return NO;
+}
+
+
+#pragma mark - 防撤回
 CHMethod(1, void, CMessageMgr, onRevokeMsg, id, arg1)
 {
 
     NSLog(@"\n>>>>>> onRevokeMsg <<<<<< \n arg1:[%@]%@ ", [arg1 class], arg1);
 }
 
+#pragma mark - 消息
 CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
 {
     CHSuper(2,  CMessageMgr, AsyncOnAddMsg, arg1, MsgWrap, arg2);
@@ -249,7 +272,12 @@ CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
 __attribute__((constructor)) static void entry()
 {
     CHLoadLateClass(CMessageMgr);
+    CHLoadLateClass(JailBreakHelper);
+    
     CHClassHook(2, CMessageMgr, AsyncOnAddMsg, MsgWrap);
-//    CHClassHook(2, CMessageMgr, AsyncOnDelMsg, MsgWrap);
     CHClassHook(1, CMessageMgr, onRevokeMsg);
+    CHClassHook(0, JailBreakHelper, HasInstallJailbreakPluginInvalidIAPPurchase);
+    CHClassHook(0, JailBreakHelper, IsJailBreak);
+    CHClassHook(1, JailBreakHelper, HasInstallJailbreakPlugin);
+    
 }
