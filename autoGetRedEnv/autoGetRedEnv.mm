@@ -15,12 +15,6 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-// Objective-C runtime hooking using CaptainHook:
-//   1. declare class using CHDeclareClass()
-//   2. load class using CHLoadClass() or CHLoadLateClass() in CHConstructor
-//   3. hook method using CHOptimizedMethod()
-//   4. register hook using CHHook() in CHConstructor
-//   5. (optionally) call old method using CHSuper()
 
 
 /**
@@ -38,58 +32,10 @@ static int const kCloseRedEnvPluginForMyselfFromChatroom = 3;
 static int HBPliginType = 1;
 static NSString* const HBTypeSetting = @"HBPliginType";
 
-//#define SAVESETTINGS(key, value) { \
-//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); \
-//NSString *docDir = [paths objectAtIndex:0]; \
-//if (!docDir){ return;} \
-//NSMutableDictionary *dict = [NSMutableDictionary dictionary]; \
-//NSString *path = [docDir stringByAppendingPathComponent:@"HBPluginSettings.txt"]; \
-//[dict setObject:value forKey:key]; \
-//[dict writeToFile:path atomically:YES]; \
-//}
-
-//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//NSString *docDir = [paths objectAtIndex:0];
-//if (!docDir){ return;}
-//NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-//NSString *path = [docDir stringByAppendingPathComponent:@"HBPluginSettings.txt"];
-//[dict setObject:value forKey:key];
-//[dict writeToFile:path atomically:YES];
-//}
 
 CHDeclareClass(CMessageMgr);
-CHDeclareClass(JailBreakHelper);
-
-// - (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2;
-// - (void)AsyncOnDelMsg:(id)arg1 MsgWrap:(id)arg2
-// - (void)onRevokeMsg:(id)arg1;
-/*
- - (BOOL)HasInstallJailbreakPluginInvalidIAPPurchase;
- - (BOOL)HasInstallJailbreakPlugin:(id)arg1;
- - (BOOL)IsJailBreak;
- */
-#pragma mark - 越狱检测
-CHMethod(0, BOOL, JailBreakHelper, HasInstallJailbreakPluginInvalidIAPPurchase)
-{
-    return NO;
-}
-
-CHMethod(0, BOOL, JailBreakHelper, IsJailBreak)
-{
-    return NO;
-}
-CHMethod(1, BOOL, JailBreakHelper, HasInstallJailbreakPlugin, id, arg1)
-{
-    return NO;
-}
 
 
-#pragma mark - 防撤回
-CHMethod(1, void, CMessageMgr, onRevokeMsg, id, arg1)
-{
-
-    NSLog(@"\n>>>>>> onRevokeMsg <<<<<< \n arg1:[%@]%@ ", [arg1 class], arg1);
-}
 
 #pragma mark - 消息
 CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
@@ -272,12 +218,7 @@ CHMethod(2, void, CMessageMgr, AsyncOnAddMsg, id, arg1, MsgWrap, id, arg2)
 __attribute__((constructor)) static void entry()
 {
     CHLoadLateClass(CMessageMgr);
-    CHLoadLateClass(JailBreakHelper);
     
     CHClassHook(2, CMessageMgr, AsyncOnAddMsg, MsgWrap);
-    CHClassHook(1, CMessageMgr, onRevokeMsg);
-    CHClassHook(0, JailBreakHelper, HasInstallJailbreakPluginInvalidIAPPurchase);
-    CHClassHook(0, JailBreakHelper, IsJailBreak);
-    CHClassHook(1, JailBreakHelper, HasInstallJailbreakPlugin);
     
 }
