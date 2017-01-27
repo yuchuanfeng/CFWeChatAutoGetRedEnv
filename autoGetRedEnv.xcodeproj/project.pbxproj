@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8633D88A1DF6C28200583A1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8633D8891DF6C28200583A1F /* Foundation.framework */; };
 		8633D8941DF6C28200583A1F /* autoGetRedEnv.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */; };
+		868E18EC1E3B675A00862196 /* CFPreJailbreakCheck.mm in Sources */ = {isa = PBXBuildFile; fileRef = 868E18EB1E3B675A00862196 /* CFPreJailbreakCheck.mm */; };
+		868E18EE1E3B676A00862196 /* CFPreRevokeMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 868E18ED1E3B676A00862196 /* CFPreRevokeMsg.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		8633D8921DF6C28200583A1F /* autoGetRedEnv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "autoGetRedEnv-Prefix.pch"; sourceTree = "<group>"; };
 		8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = autoGetRedEnv.mm; sourceTree = "<group>"; };
 		8633D8981DF6C28200583A1F /* autoGetRedEnv.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = autoGetRedEnv.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/autoGetRedEnv.plist; sourceTree = "<group>"; };
+		868E18EB1E3B675A00862196 /* CFPreJailbreakCheck.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CFPreJailbreakCheck.mm; sourceTree = "<group>"; };
+		868E18ED1E3B676A00862196 /* CFPreRevokeMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPreRevokeMsg.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		8633D88B1DF6C28200583A1F /* autoGetRedEnv */ = {
 			isa = PBXGroup;
 			children = (
+				868E18ED1E3B676A00862196 /* CFPreRevokeMsg.m */,
+				868E18EB1E3B675A00862196 /* CFPreJailbreakCheck.mm */,
 				8633D8931DF6C28200583A1F /* autoGetRedEnv.mm */,
 				8633D88C1DF6C28200583A1F /* Package */,
 				8633D8901DF6C28200583A1F /* Supporting Files */,
@@ -204,7 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868E18EE1E3B676A00862196 /* CFPreRevokeMsg.m in Sources */,
 				8633D8941DF6C28200583A1F /* autoGetRedEnv.mm in Sources */,
+				868E18EC1E3B675A00862196 /* CFPreJailbreakCheck.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +333,7 @@
 				8633D89D1DF6C28200583A1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
